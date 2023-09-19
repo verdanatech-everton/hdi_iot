@@ -49,7 +49,7 @@ void loop()
   {
     Serial.println("Criação pressionado");
     digitalWrite(REQUEST_LED, HIGH);
-    String ticketCreatedResponse = invasion.NewTicketRequest("HID Brasil", "IoT", 3, "Criação de chamado", assetName);
+    String ticketCreatedResponse = invasion.NewTicketRequest("HDI Brasil", "IoT", 3, "Criação de chamado", assetName);
     String ticketCreated = getResponse(ticketCreatedResponse);
 
     if (ticketCreated == lastTicketId)
@@ -70,7 +70,7 @@ void loop()
     if (lastTicketId != "")
     {
       Serial.println("Adicionando acompanhamento para o ticket: " + lastTicketId);
-      invasion.FollowupTicket(lastTicketId, "HID Brasil");
+      invasion.FollowupTicket(lastTicketId, "HDI Brasil");
     }
     else
     {
@@ -85,7 +85,7 @@ void loop()
     if (lastTicketId != "")
     {
       Serial.println("Fechando o ticket: " + lastTicketId);
-      invasion.SolutionTicket(lastTicketId, "HID Brasil");
+      invasion.SolutionTicket(lastTicketId, "HDI Brasil");
       lastTicketId = "";
     }
     else
